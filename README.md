@@ -37,3 +37,20 @@ Description:
 Contains sarcastic comments extracted from Reddit threads, providing longer text examples with richer context.
 
 As raw datasets are too large, they are not included in the repository. The cleaned dataset, which samples from the raw datasets, can be found in combine_data_clean.csv under data
+
+
+To train and evaluate the explanation component of our pipeline, we use two publicly available sarcasm explanation datasets:
+
+1. MuSE (Multimodal Sarcasm Explanations)
+
+Github: [MuSE Dataset](https://github.com/LCS2-IIITD/Multimodal-Sarcasm-Explanation-MuSE)
+
+Description:
+A multimodal dataset containing sarcastic text paired with human-written explanations. Useful for training models to generate interpretable explanations for sarcasm detection.
+
+2. Kaggle Sarcasm Explanation Dataset (by prayag007)
+
+Kaggle: Sarcasm Explanation Dataset
+
+Description:
+-
