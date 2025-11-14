@@ -50,7 +50,7 @@ A multimodal dataset containing sarcastic text paired with human-written explana
 
 2. Kaggle Sarcasm Explanation Dataset (by prayag007)
 
-Kaggle: Sarcasm Explanation Dataset
+Kaggle: [Sarcasm Explanation Dataset](https://www.kaggle.com/datasets/prayag007/sarcasm-explanation)
 
 Description:
-placeholder
+
