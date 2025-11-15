@@ -261,11 +261,11 @@ trainer = Trainer(
     tokenizer=tokenizer,
 )
 
-print("🚀 Starting final full fine-tuning (Reddit train/val)...")
+print("Starting final full fine-tuning (Reddit train/val)...")
 t0 = time.time()
 trainer.train()
 train_time = time.time() - t0
-print(f"✅ Training completed in {train_time/60:.2f} minutes")
+print(f"Training completed in {train_time/60:.2f} minutes")
 
 # Evaluate on Reddit val + Non-Reddit test
 val_metrics = trainer.evaluate(eval_dataset=val_ds)
@@ -311,7 +311,7 @@ plt.title("Confusion Matrix - Test Set (Non-Reddit)")
 plt.tight_layout()
 plt.savefig("results/confusion_matrix_test.png", bbox_inches="tight", dpi=300)
 plt.close(fig)
-print("✅ Confusion matrix saved to results/confusion_matrix_test.png")
+print("Confusion matrix saved to results/confusion_matrix_test.png")
 
 # ROC Curve (Non-Reddit test)
 probs = torch.softmax(torch.tensor(logits), dim=1)[:, 1].numpy()
@@ -328,7 +328,7 @@ ax.legend(loc="lower right")
 plt.tight_layout()
 plt.savefig("results/roc_curve_test.png", bbox_inches="tight", dpi=300)
 plt.close(fig)
-print("✅ ROC curve saved to results/roc_curve_test.png")
+print("ROC curve saved to results/roc_curve_test.png")
 
 # Save model
 model_dir = "results/best_full_finetuned_distilbert"
