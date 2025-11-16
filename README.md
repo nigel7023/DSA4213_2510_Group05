@@ -14,8 +14,9 @@ This setup enables not only accurate classification but also transparent reasoni
 ## Repository Structure
 ```
 DSA4213_2510_Group05/
-├── Models/             # Contains saved LoRA adapter weights, other model weights too large for github
-├── Notebooks/          # Jupyter notebooks as well as py scripts for experiments and training
+├── src/                # Contains Jupyter notebooks as well as py scripts for experiments and training
+|   ├── Encoder
+│   └── Decoder
 ├── data/               # Datasets we used for model training and experiments
 ├── README.md           # Project overview, instructions, etc.
 └── requirements.txt    # Python dependencies
@@ -80,13 +81,18 @@ Hyperparameter search was conducted with Optuna using Bayesian optimisation.
 
 ## Decoder for explanation generation
 We evaluated several generative models:
-- FLAN-T5 (base & small)
+- FLAN-T5-base
 - GPT-2
 - BART
-FLAN-T5-base provided the best explanations on:
-- MuSE (Multimodal Sarcasm Explanation) text subset
-- Kaggle Sarcasm Explanation Dataset
-To address limited explanation data, we:
-- Augmented training labels with synthetic explanations from Claude
-- Performed knowledge distillation to smaller T5 models for faster inference
+  
+Hyperparameter search was conducted with Optuna using Bayesian optimisation.
+FLAN-T5-base provided the best explanations from MuSE (Multimodal Sarcasm Explanation) text subset and Kaggle Sarcasm Explanation Dataset, hence FLAN-T5-base is our choice of decoder.
+
+To address limited gold-standard explanation data for two downstream task, identifying the sarcastic cue and explaining the non-sarcastic meaning, we:
+- Augmented training labels with synthetic explanations from Claude 4 on both tasks
+
+Experiments using synthetic explanations:
+- Finetuning two FLAN-T5-base on the two downstream task
+- Ablation study on Generalist vs Specialist decoder model
+- Knowledge Distillation using Fine-tuned FLAN-T5-base as teacher to transfer to student FLAN-T5-small 
 
