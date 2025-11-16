@@ -1,11 +1,15 @@
 numpy
 pandas
+tqdm
 scikit-learn
 torch
+accelerate
 transformers
 datasets
-tqdm
+sentencepiece       # required for many HF tokenizers/models
+evaluate            # recommended for HF trainer metrics
+peft
+optuna
 matplotlib
 seaborn
-optuna
-kagglehub
+kagglehub           # if you download datasets from KaggleHub
