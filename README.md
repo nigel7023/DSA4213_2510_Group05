@@ -55,3 +55,29 @@ Kaggle: [Sarcasm Explanation Dataset](https://www.kaggle.com/datasets/prayag007/
 Description: 
 Contains sarcastic text and human-written explanations for what they actually mean
 
+# Experiments
+## Encoder for Sarcasm Detection
+We fine-tuned multiple pretrained models:
+- DistilBERT
+- BERT
+- RoBERTa
+
+Experiments included:
+- Full fine-tuning vs LoRA parameter-efficient tuning
+- Domain generalisation 
+- Sentiment masking ablation to test reliance on polarity cues
+
+Hyperparameter search was conducted with Optuna using Bayesian optimisation.
+
+## Decoder for explanation generation
+We evaluated several generative models:
+- FLAN-T5 (base & small)
+- GPT-2
+- BART
+FLAN-T5-base provided the best explanations on:
+- MuSE (Multimodal Sarcasm Explanation) text subset
+- Kaggle Sarcasm Explanation Dataset
+To address limited explanation data, we:
+- Augmented training labels with synthetic explanations from Claude
+- Performed knowledge distillation to smaller T5 models for faster inference
+
