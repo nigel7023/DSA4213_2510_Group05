@@ -11,6 +11,15 @@ FLAN-T5-based models generate explanations clarifying why the text is sarcastic.
 
 This setup enables not only accurate classification but also transparent reasoning suitable for real-world applications like sentiment analysis, content moderation, and conversational AI.
 
+## Repository Structure
+```
+DSA4213_2510_Group05/
+├── Models/             # Contains saved LoRA adapter weights, other model weights too large for github
+├── Notebooks/          # Jupyter notebooks as well as py scripts for experiments and training
+├── data/               # Datasets we used for model training and experiments
+├── README.md           # Project overview, instructions, etc.
+└── requirements.txt    # Python dependencies
+```
 
 ## Dataset
 The Encoder portion of the project uses three publicly available sarcasm datasets from Kaggle, covering news headlines, tweets, and Reddit comments. These diverse sources help the model generalize across different writing styles and platforms.
