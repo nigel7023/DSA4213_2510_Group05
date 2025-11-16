@@ -6,10 +6,11 @@ torch
 accelerate
 transformers
 datasets
-sentencepiece       # required for many HF tokenizers/models
-evaluate            # recommended for HF trainer metrics
+sentencepiece 
+evaluate
 peft
 optuna
 matplotlib
 seaborn
-kagglehub           # if you download datasets from KaggleHub
+kagglehub
+psutil
